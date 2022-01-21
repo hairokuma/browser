@@ -1,1 +1,6 @@
-{}
+[{
+  "title": "Google",
+  "url": "https://google.com/",
+  "favicon": "atom://browser/styles/icons/google.png",
+  "hostname": "google.com"
+}]
