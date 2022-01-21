@@ -1,0 +1,264 @@
+@base-color: @button-background-color-selected;
+@import "ui-variables";
+
+[data-type="BrowserView"] {
+  .title {
+    background-image: url("atom://browser/styles/icons/globe.svg");
+    background-repeat: no-repeat;
+    background-position: 1px 5px;
+    background-size: 20px;
+    padding-left: 25px !important;
+  }
+}
+
+.browser-view {
+  box-sizing: border-box;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+
+  .browser-navbar {
+    padding: 5px;
+    display: flex;
+    border: none;
+    background-color: @syntax-background-color;
+
+    .addressbar {
+      width: 100%;
+      position: relative;
+
+      .browser-addressbar {
+        width: 100%;
+        height: 100%;
+        border-radius: 1em;
+        padding: 0 10px;
+
+        // &:focus {
+        //   border-radius: 1em 1em 0 0;
+        // }
+      }
+
+      .addressbar-history {
+        position: absolute;
+        top: 28px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        background-color: #090a0c;
+        border-radius:1em;
+        overflow: auto;
+
+        .history-entry {
+          padding: 5px;
+          font-size: 1.25em;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          &.active,&:hover {
+            background-color: @syntax-background-color;
+          }
+
+          img {
+            width: 25px;
+            pointer-events: none;
+          }
+
+          .title,
+          .url {
+            padding:0 10px;
+            max-width:~"calc(50% - 25px)";
+            overflow: hidden;
+            white-space: pre;
+            text-overflow: ellipsis;
+            pointer-events: none;
+            font-weight: 100;
+          }
+
+          .title {
+            // font-weight: bold;
+            border-right: solid 1px darken(@syntax-text-color,30%);
+          }
+
+          .url {
+            color: #568af2;
+          }
+
+          .times {
+            width: 25px;
+            height: 25px;
+            margin-left: auto;
+            background-color: darken(@syntax-text-color,30%);
+            -webkit-mask-image: url("atom://browser/styles/icons/times.svg");
+            -webkit-mask-size: 16px;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+
+            &:hover {
+              background-color: @syntax-text-color;
+            }
+          }
+        }
+      }
+    }
+
+    button {
+      border: none;
+      padding: 13px;
+      margin: 0 5px;
+      height: 26px;
+      width: 26px;
+      background-color: @syntax-text-color;
+      -webkit-mask-image: url("atom://browser/styles/icons/globe.svg");
+      -webkit-mask-size: 16px;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+
+
+      &.btn-back {
+        -webkit-mask-image: url("atom://browser/styles/icons/arrow-left.svg");
+      }
+
+      &.btn-reload {
+        -webkit-mask-image: url("atom://browser/styles/icons/redo.svg");
+
+        &.loading {
+          -webkit-mask-image: url("atom://browser/styles/icons/times.svg");
+        }
+      }
+
+      &.btn-live-reload {
+        -webkit-mask-image: url("atom://browser/styles/icons/eye.svg");
+      }
+
+      &.btn-devtools {
+        -webkit-mask-image: url("atom://browser/styles/icons/terminal.svg");
+      }
+
+      &.btn-zoom {
+        -webkit-mask-image: url("atom://browser/styles/icons/search.svg");
+      }
+
+      &.btn-zoom-in {
+        -webkit-mask-image: url("atom://browser/styles/icons/plus.svg");
+      }
+
+      &.btn-zoom-out {
+        -webkit-mask-image: url("atom://browser/styles/icons/minus.svg");
+      }
+
+      &.btn-search {
+        -webkit-mask-image: url("atom://browser/styles/icons/file-search.svg");
+      }
+
+      &.btn-search-prev {
+        -webkit-mask-image: url("atom://browser/styles/icons/angle-up.svg");
+      }
+
+      &.btn-search-next {
+        -webkit-mask-image: url("atom://browser/styles/icons/angle-down.svg");
+      }
+
+      &.active,
+      &:hover {
+        background-color: lighten(@syntax-text-color, 30%);
+      }
+      &[disabled],&[disabled]:hover{
+        background-color: darken(@syntax-text-color,30%);
+      }
+    }
+
+    .search-bar,
+    .zoom-bar {
+      display: flex;
+      background-color: @syntax-background-color;
+      border-radius: 2em;
+      position: relative;
+
+      .input-zoom {
+        width: 32px;
+      }
+
+      .input-search {
+        width: 200px;
+        border-radius: 2em;
+        padding: 0 10px;
+      }
+
+      .search-result {
+        position: absolute;
+        right: 10px;
+        top: 4px;
+        color: darken(@syntax-text-color, 30%);
+      }
+    }
+  }
+}
+// data-type="BrowserView"
+
+.atombrowser-webview-container {
+  flex: 1;
+  position: relative;
+
+  #atombrowser-webview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: @background-color-selected;
+  }
+
+  #atombrowser-webview-failed-load {
+    position: absolute;
+    top: calc(50% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: @text-color;
+    width: 100%;
+    padding: 0 2rem;
+    max-width: 400px;
+
+    i {
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+    }
+
+    i:before {
+      animation: atombrowser-in-down 0.2s ease-in-out;
+      font-size: 48px;
+      width: 44px;
+      height: 60px;
+    }
+
+    h4 {
+      opacity: 0;
+      animation: atombrowser-in-up 0.2s ease-in-out forwards;
+      animation-delay: 0.1s;
+      text-align: center;
+    }
+  }
+}
+@keyframes atombrowser-in-down {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes atombrowser-in-up {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

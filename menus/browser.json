@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Open in Browser",
+        "command": "browser:openFile"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Browser",
+          "submenu": [
+            {
+              "label": "Open Browser Tab",
+              "command": "browser:open"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

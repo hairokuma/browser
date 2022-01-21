@@ -1,0 +1,19 @@
+{
+  "name": "browser",
+  "main": "./lib/browser",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [],
+  "activationCommands": {
+    "atom-workspace": "browser:open"
+  },
+  "repository": "https://github.com/atom/browser",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {},
+  "deserializers": {
+    "BrowserView": "deserialize"
+  }
+}

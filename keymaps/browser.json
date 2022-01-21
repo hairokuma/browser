@@ -1,0 +1,12 @@
+{
+  "atom-workspace": {
+    "ctrl-t": "browser:open",
+    "ctrl-l": "browser:focusAddressBar"
+  },
+  "atom-text-editor": {
+    "ctrl-shift-H": "browser:openFile"
+  },
+  "body": {
+    "ctrl-shift-J": "browser:debug"
+  }
+}

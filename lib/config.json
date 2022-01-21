@@ -1,0 +1,27 @@
+{
+  "defaultLocation": {
+    "title": "Default Location",
+    "description": "Choose the default dock location for the Browser:",
+    "type": "string",
+    "default": "center",
+    "enum": [{
+        "value": "center",
+        "description": "Center"
+      },
+      {
+        "value": "bottom",
+        "description": "Bottom Dock"
+      },
+      {
+        "value": "right",
+        "description": "Right Dock"
+      }
+    ]
+  },
+  "defaultUrl": {
+    "title": "Default URL",
+    "description": "New Tab starts with default URL:",
+    "type": "string",
+    "default": "https://www.google.com/"
+  }
+}
