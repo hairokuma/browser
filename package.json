@@ -7,7 +7,7 @@
   "activationCommands": {
     "atom-workspace": "browser:open"
   },
-  "repository": "https://github.com/atom/browser",
+  "repository": "https://github.com/hairokuma/browser",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
