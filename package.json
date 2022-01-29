@@ -1,12 +1,9 @@
 {
   "name": "browser",
   "main": "./lib/browser",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A short description of your package",
   "keywords": [],
-  "activationCommands": {
-    "atom-workspace": "browser:open"
-  },
   "repository": "https://github.com/hairokuma/browser",
   "license": "MIT",
   "engines": {
@@ -14,6 +11,6 @@
   },
   "dependencies": {},
   "deserializers": {
-    "BrowserView": "deserialize"
+    "BrowserTab": "deserialize"
   }
 }

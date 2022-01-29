@@ -1,17 +1,17 @@
 @base-color: @button-background-color-selected;
 @import "ui-variables";
 
-[data-type="BrowserView"] {
+[data-type="BrowserTab"] {
   .title {
     background-image: url("atom://browser/styles/icons/globe.svg");
     background-repeat: no-repeat;
-    background-position: 1px 5px;
+    background-position: 1px center;
     background-size: 20px;
     padding-left: 25px !important;
   }
 }
 
-.browser-view {
+.browser-tab {
   box-sizing: border-box;
   z-index: 1;
   display: flex;
@@ -23,19 +23,15 @@
     border: none;
     background-color: @syntax-background-color;
 
-    .addressbar {
+    .addressbar-container {
       width: 100%;
       position: relative;
 
-      .browser-addressbar {
+      .addressbar {
         width: 100%;
         height: 100%;
         border-radius: 1em;
         padding: 0 10px;
-
-        // &:focus {
-        //   border-radius: 1em 1em 0 0;
-        // }
       }
 
       .addressbar-history {
@@ -194,71 +190,18 @@
     }
   }
 }
-// data-type="BrowserView"
 
-.atombrowser-webview-container {
+.webview-container {
   flex: 1;
   position: relative;
-
-  #atombrowser-webview {
+  #webview {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    background: @background-color-selected;
-  }
-
-  #atombrowser-webview-failed-load {
-    position: absolute;
-    top: calc(50% + 8px);
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    color: @text-color;
-    width: 100%;
-    padding: 0 2rem;
-    max-width: 400px;
-
-    i {
-      margin: 0 auto;
-      display: block;
-      text-align: center;
-    }
-
-    i:before {
-      animation: atombrowser-in-down 0.2s ease-in-out;
-      font-size: 48px;
-      width: 44px;
-      height: 60px;
-    }
-
-    h4 {
-      opacity: 0;
-      animation: atombrowser-in-up 0.2s ease-in-out forwards;
-      animation-delay: 0.1s;
-      text-align: center;
-    }
-  }
-}
-@keyframes atombrowser-in-down {
-  from {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-@keyframes atombrowser-in-up {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0px);
-    opacity: 1;
+    //TODO: passthrough html color
+    background: @syntax-background-color;
+    color: @syntax-text-color;
   }
 }

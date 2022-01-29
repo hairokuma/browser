@@ -9,12 +9,39 @@
         "description": "Center"
       },
       {
-        "value": "bottom",
-        "description": "Bottom Dock"
+        "value": "left",
+        "description": "left Dock"
       },
       {
         "value": "right",
         "description": "Right Dock"
+      },
+      {
+        "value": "bottom",
+        "description": "Bottom Dock"
+      }
+    ]
+  },
+  "searchEngine": {
+    "title": "Search Engine",
+    "description": "Choose Your favourite Search Engine",
+    "type": "string",
+    "default": "https://duckduckgo.com/?q=",
+    "enum": [{
+        "value": "https://duckduckgo.com/?q=",
+        "description": "DuckDuckGo"
+      },
+      {
+        "value": "https://www.google.com/search?q=",
+        "description": "Google"
+      },
+      {
+        "value": "https://www.ecosia.org/search?q=",
+        "description": "Ecosia"
+      },
+      {
+        "value": "https://search.brave.com/search?q=",
+        "description": "Brave"
       }
     ]
   },
@@ -22,6 +49,6 @@
     "title": "Default URL",
     "description": "New Tab starts with default URL:",
     "type": "string",
-    "default": "https://www.google.com/"
+    "default": "https://duckduckgo.com/"
   }
 }
