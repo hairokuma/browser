@@ -3,7 +3,7 @@
 Open Browser-Tabs in [Atom-Editor](https://atom.io/) Powerd by Electron's [`<webview>`](https://www.electronjs.org/de/docs/latest/api/webview-tag).
 Markdown Preview support by [Showdown](https://github.com/showdownjs/showdown) with Dark Github README Style
 
-## Eearch Engines
+## Search Engines
 Choose Your favourite Search Engine
 - DuckDuckGo
 - Google
@@ -73,3 +73,4 @@ ctrl+shift+P -> Application: Open Your Keymap
 - [Missing Webview Relation on deserialize as Active Pane-Item](https://github.com/hairokuma/browser/issues/1)
 - add browser-Menue
 - add Context-Menue support
+- open dev-tool in as panel
